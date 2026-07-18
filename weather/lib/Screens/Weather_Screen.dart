@@ -48,293 +48,353 @@ class _weatherScreenState extends State<weatherScreen> {
           ),
         ),
         child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(24.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Good Morning",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: -0.5,
-                    // height: 2.0,
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Good Morning",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: -0.5,
+                      // height: 2.0,
+                    ),
                   ),
-                ),
 
-                const SizedBox(height: 12),
-                Text(
-                  "Current City",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black87,
-                    fontWeight: FontWeight.w600,
+                  const SizedBox(height: 12),
+                  Text(
+                    "Current City",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                ),
-                const Text(
-                  "Lagos, Nigeria",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black87,
-                    letterSpacing: -0.5,
+                  const Text(
+                    "Lagos, Nigeria",
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.black87,
+                      letterSpacing: -0.5,
+                    ),
                   ),
-                ),
 
-                const SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
-                Center(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 200,
-                        width: 200,
-                        child: Stack(
-                          alignment: Alignment.center,
-
-                          children: [
-                            Icon(
-                              Icons.wb_sunny_rounded,
-                              color: Colors.orangeAccent,
-                              size: 170,
-                            ),
-
-                            Positioned(
-                              bottom: 5,
-                              right: 5,
-                              child: Icon(
-                                Icons.cloud_rounded,
-                                color: Colors.white.withOpacity(0.95),
-                                size: 75,
-                              ),
-                            ),
-
-                            Positioned(
-                              bottom: 55,
-                              left: 5,
-                              child: Icon(
-                                Icons.cloud_rounded,
-                                color: Colors.white.withOpacity(0.70),
-                                size: 35,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // const SizedBox(height: 10),
-                      Text(
-                        "28 C",
-                        style: TextStyle(
-                          fontSize: 64,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
-                          height: 1.0,
-                        ),
-                      ),
-
-                      const SizedBox(height: 6),
-
-                      const Text(
-                        'Partly Cloudy',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black54,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-
-                      Center(
-                        child: Card(
-                          elevation: 0,
-                          color: Colors.white.withOpacity(0.35),
-
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 28.0,
-                              vertical: 8.0,
-                            ),
-
-                            child: Text(
-                              "High: 31°C / Low: 22°C",
-                              style: TextStyle(color: Colors.black87),
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      const SizedBox(height: 16),
-
-                      Center(
-                        child: Card(
-                          elevation: 0,
-                          color: Colors.white.withOpacity(0.35),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(16),
-                          ),
-
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  Center(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 200,
+                          width: 200,
+                          child: Stack(
+                            alignment: Alignment.center,
 
                             children: [
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Humidity",
-                                      style: TextStyle(
-                                        color: Colors.black87,
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
+                              Icon(
+                                Icons.wb_sunny_rounded,
+                                color: Colors.orangeAccent,
+                                size: 170,
+                              ),
 
-                                    const Text(
-                                      "65%",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
+                              Positioned(
+                                bottom: 5,
+                                right: 5,
+                                child: Icon(
+                                  Icons.cloud_rounded,
+                                  color: Colors.white.withOpacity(0.95),
+                                  size: 75,
                                 ),
                               ),
-                              Container(
-                                height: 35,
-                                width: 1,
-                                color: Colors.black.withOpacity(0.15),
-                              ),
 
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Wind Speed",
-                                      style: TextStyle(
-                                        color: Colors.black87,
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-
-                                    
-                                    const SizedBox(height: 4),
-
-                                    const Text(
-                                      "12 Km/h",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
+                              Positioned(
+                                bottom: 55,
+                                left: 5,
+                                child: Icon(
+                                  Icons.cloud_rounded,
+                                  color: Colors.white.withOpacity(0.70),
+                                  size: 35,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                      ),
 
-                      const SizedBox(height: 24),
+                        // const SizedBox(height: 10),
+                        Text(
+                          "28 C",
+                          style: TextStyle(
+                            fontSize: 64,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black87,
+                            height: 1.0,
+                          ),
+                        ),
 
-                       const Text(
-                        "Hourly Forcast",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold 
-                        )
-                       ),
+                        const SizedBox(height: 6),
 
-                       const SizedBox(height: 12,),
+                        const Text(
+                          'Partly Cloudy',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black54,
+                          ),
+                        ),
 
-                       SizedBox(
-                        height: 120 ,
-                         child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          physics: const BouncingScrollPhysics(),
+                        const SizedBox(height: 10),
 
-                          children: [
+                        Center(
+                          child: Card(
+                            elevation: 0,
+                            color: Colors.white.withOpacity(0.35),
 
-                            _buildForcastCard("10 AM" Icons.wb_sunny, Colors.orangeAccent, "30°")
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
 
-                          ],
-                         ),
-                       )
-                    ],
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 28.0,
+                                vertical: 8.0,
+                              ),
+
+                              child: Text(
+                                "High: 31°C / Low: 22°C",
+                                style: TextStyle(color: Colors.black87),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        const SizedBox(height: 16),
+
+                        Center(
+                          child: Card(
+                            elevation: 0,
+                            color: Colors.white.withOpacity(0.35),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadiusGeometry.circular(16),
+                            ),
+
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Humidity",
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 4),
+
+                                      const Text(
+                                        "65%",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 35,
+                                  width: 1,
+                                  color: Colors.black.withOpacity(0.15),
+                                ),
+
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Wind Speed",
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+
+                                      const SizedBox(height: 4),
+
+                                      const Text(
+                                        "12 Km/h",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        const SizedBox(height: 24),
+
+                        const Text(
+                          "Hourly Forcast",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        const SizedBox(height: 12),
+
+                        SizedBox(
+                          height: 120,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            physics: const BouncingScrollPhysics(),
+
+                            children: [
+                              _buildForcastCard(
+                                "10 AM",
+                                Icons.wb_sunny,
+                                Colors.orangeAccent,
+                                "30°",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                              _buildForcastCard(
+                                "11 AM",
+                                Icons.sunny_snowing,
+                                Colors.orangeAccent,
+                                "37",
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today, color: Colors.blue, size: 30),
+            label: "Today",
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.search_rounded, color: Colors.blue, size: 30),
+            label: "Search",
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.settings, color: Colors.blue, size: 30),
+            label: "Settings",
+          ),
+        ],
+
+        elevation: 0,
+
+        backgroundColor: Colors.white.withOpacity(0.95),
       ),
     );
   }
 }
 
-
-Widget _buildForcastCard (
+Widget _buildForcastCard(
   String time,
   IconData icon,
   Color iconColor,
   String temp,
-){
+) {
   return Container(
     width: 75,
     margin: EdgeInsets.only(right: 10),
-    padding: EdgeInsets.symmetric(
-      horizontal: 8,
-      vertical: 12,
-    ),
+    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
 
     decoration: BoxDecoration(
       color: Colors.white.withOpacity(0.35),
       borderRadius: BorderRadius.circular(12),
-      border: Border.all(
-        color: Colors.white.withOpacity(0.2),
-        width: 1,
-      ),
-      // boxShadow: 
+      border: Border.all(color: Colors.white.withOpacity(0.2), width: 1),
+      // boxShadow:
     ),
 
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
       children: [
-        Text(time,
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-          color: Colors.black54,
-        ),),
-
-        Icon(icon,
-        color: iconColor,
-        size: 26,
+        Text(
+          time,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            color: Colors.black54,
+          ),
         ),
 
-        Text(temp,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 16,
-          fontWeight: FontWeight.bold
-        ),)
+        Icon(icon, color: iconColor, size: 26),
 
+        Text(
+          temp,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ],
-
     ),
   );
 }

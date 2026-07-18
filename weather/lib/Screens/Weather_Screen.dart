@@ -88,8 +88,8 @@ class _weatherScreenState extends State<weatherScreen> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 140,
-                        width: 140,
+                        height: 200,
+                        width: 200,
                         child: Stack(
                           alignment: Alignment.center,
 
@@ -97,7 +97,7 @@ class _weatherScreenState extends State<weatherScreen> {
                             Icon(
                               Icons.wb_sunny_rounded,
                               color: Colors.orangeAccent,
-                              size: 100,
+                              size: 170,
                             ),
 
                             Positioned(
@@ -135,6 +135,8 @@ class _weatherScreenState extends State<weatherScreen> {
                       ),
 
                       const SizedBox(height: 6),
+
+
                       const Text(
                         'Partly Cloudy',
                         style: TextStyle(
@@ -143,6 +145,38 @@ class _weatherScreenState extends State<weatherScreen> {
                           color: Colors.black54,
                         ),
                       ),
+                      
+
+                      const SizedBox(height: 10,),
+
+
+                      Center(
+                        child: Card(
+                          elevation: 0,
+                          color: Colors.white.withOpacity(0.35),
+
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)
+                          ),
+
+                          child: Padding(
+                            padding: EdgeInsets.symmetric( 
+                              horizontal: 28.0, 
+                              vertical: 8.0
+                            ),
+
+                            child: Text("High: 31°C / Low: 22°C",
+                            style: TextStyle(
+                              color: Colors.black87
+                            ),),
+                          ),
+                        ),
+                      ),
+
+
+                      const SizedBox(height: 16,),
+
+                      
                     ],
                   ),
                 ),

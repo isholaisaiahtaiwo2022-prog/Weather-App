@@ -136,7 +136,6 @@ class _weatherScreenState extends State<weatherScreen> {
 
                       const SizedBox(height: 6),
 
-
                       const Text(
                         'Partly Cloudy',
                         style: TextStyle(
@@ -145,10 +144,8 @@ class _weatherScreenState extends State<weatherScreen> {
                           color: Colors.black54,
                         ),
                       ),
-                      
 
-                      const SizedBox(height: 10,),
-
+                      const SizedBox(height: 10),
 
                       Center(
                         child: Card(
@@ -156,27 +153,97 @@ class _weatherScreenState extends State<weatherScreen> {
                           color: Colors.white.withOpacity(0.35),
 
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)
+                            borderRadius: BorderRadius.circular(30),
                           ),
 
                           child: Padding(
-                            padding: EdgeInsets.symmetric( 
-                              horizontal: 28.0, 
-                              vertical: 8.0
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 28.0,
+                              vertical: 8.0,
                             ),
 
-                            child: Text("High: 31°C / Low: 22°C",
-                            style: TextStyle(
-                              color: Colors.black87
-                            ),),
+                            child: Text(
+                              "High: 31°C / Low: 22°C",
+                              style: TextStyle(color: Colors.black87),
+                            ),
                           ),
                         ),
                       ),
 
+                      const SizedBox(height: 16),
 
-                      const SizedBox(height: 16,),
+                      Center(
+                        child: Card(
+                          elevation: 0,
+                          color: Colors.white.withOpacity(0.35),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusGeometry.circular(16),
+                          ),
 
-                      
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Humidity",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+
+                                    const Text(
+                                      "65%",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 35,
+                                width: 1,
+                                color: Colors.black.withOpacity(0.15),
+                              ),
+
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Wind Speed",
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+
+                                    const Text(
+                                      "12 Km/h",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),

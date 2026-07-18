@@ -63,7 +63,7 @@ class _weatherScreenState extends State<weatherScreen> {
                     // height: 2.0,
                   ),
                 ),
-          
+
                 const SizedBox(height: 12),
                 Text(
                   "Current City",
@@ -73,15 +73,17 @@ class _weatherScreenState extends State<weatherScreen> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const Text("Lagos, Nigeria",
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.black87,
-                  letterSpacing: -0.5
-                ),),
-          
-                const SizedBox(height: 20,),
-          
+                const Text(
+                  "Lagos, Nigeria",
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.black87,
+                    letterSpacing: -0.5,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+
                 Center(
                   child: Column(
                     children: [
@@ -90,18 +92,60 @@ class _weatherScreenState extends State<weatherScreen> {
                         width: 140,
                         child: Stack(
                           alignment: Alignment.center,
-                        
+
                           children: [
-                            Icon(Icons.wb_sunny_rounded,
-                            color: Colors.orangeAccent,
-                            size: 100,
-                            )
+                            Icon(
+                              Icons.wb_sunny_rounded,
+                              color: Colors.orangeAccent,
+                              size: 100,
+                            ),
+
+                            Positioned(
+                              bottom: 5,
+                              right: 5,
+                              child: Icon(
+                                Icons.cloud_rounded,
+                                color: Colors.white.withOpacity(0.95),
+                                size: 75,
+                              ),
+                            ),
+
+                            Positioned(
+                              bottom: 55,
+                              left: 5,
+                              child: Icon(
+                                Icons.cloud_rounded,
+                                color: Colors.white.withOpacity(0.70),
+                                size: 35,
+                              ),
+                            ),
                           ],
+                        ),
+                      ),
+
+                      // const SizedBox(height: 10),
+                      Text(
+                        "28 C",
+                        style: TextStyle(
+                          fontSize: 64,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black87,
+                          height: 1.0,
+                        ),
+                      ),
+
+                      const SizedBox(height: 6),
+                      const Text(
+                        'Partly Cloudy',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black54,
                         ),
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

@@ -227,6 +227,8 @@ class _weatherScreenState extends State<weatherScreen> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
+
+                                    
                                     const SizedBox(height: 4),
 
                                     const Text(
@@ -244,6 +246,33 @@ class _weatherScreenState extends State<weatherScreen> {
                           ),
                         ),
                       ),
+
+                      const SizedBox(height: 24),
+
+                       const Text(
+                        "Hourly Forcast",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold 
+                        )
+                       ),
+
+                       const SizedBox(height: 12,),
+
+                       SizedBox(
+                        height: 120 ,
+                         child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+
+                          children: [
+
+                            _buildForcastCard("10 AM" Icons.wb_sunny, Colors.orangeAccent, "30°")
+
+                          ],
+                         ),
+                       )
                     ],
                   ),
                 ),
@@ -254,4 +283,58 @@ class _weatherScreenState extends State<weatherScreen> {
       ),
     );
   }
+}
+
+
+Widget _buildForcastCard (
+  String time,
+  IconData icon,
+  Color iconColor,
+  String temp,
+){
+  return Container(
+    width: 75,
+    margin: EdgeInsets.only(right: 10),
+    padding: EdgeInsets.symmetric(
+      horizontal: 8,
+      vertical: 12,
+    ),
+
+    decoration: BoxDecoration(
+      color: Colors.white.withOpacity(0.35),
+      borderRadius: BorderRadius.circular(12),
+      border: Border.all(
+        color: Colors.white.withOpacity(0.2),
+        width: 1,
+      ),
+      // boxShadow: 
+    ),
+
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+      children: [
+        Text(time,
+        style: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
+          color: Colors.black54,
+        ),),
+
+        Icon(icon,
+        color: iconColor,
+        size: 26,
+        ),
+
+        Text(temp,
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 16,
+          fontWeight: FontWeight.bold
+        ),)
+
+      ],
+
+    ),
+  );
 }

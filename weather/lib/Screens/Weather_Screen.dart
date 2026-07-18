@@ -63,7 +63,7 @@ class _weatherScreenState extends State<weatherScreen> {
                     // height: 2.0,
                   ),
                 ),
-
+          
                 const SizedBox(height: 12),
                 Text(
                   "Current City",
@@ -73,7 +73,35 @@ class _weatherScreenState extends State<weatherScreen> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const Text("Lagos, Nigeria")
+                const Text("Lagos, Nigeria",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black87,
+                  letterSpacing: -0.5
+                ),),
+          
+                const SizedBox(height: 20,),
+          
+                Center(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 140,
+                        width: 140,
+                        child: Stack(
+                          alignment: Alignment.center,
+                        
+                          children: [
+                            Icon(Icons.wb_sunny_rounded,
+                            color: Colors.orangeAccent,
+                            size: 100,
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

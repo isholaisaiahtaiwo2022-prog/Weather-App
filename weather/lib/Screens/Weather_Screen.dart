@@ -30,6 +30,27 @@ class weatherScreen extends StatefulWidget {
 }
 
 class _weatherScreenState extends State<weatherScreen> {
+  int _currentTabIndex = 0;
+
+  //State variable for API & Loading
+  bool _isLoading = true;
+  String _errorMessage = '';
+
+  //Temperature Unit Control
+  bool _isCelsius = true;
+
+  // Weather state variables
+  String _cityName = 'Locating....';
+  double _rawTemp = 0.0;
+  double _rawHigh = 0.0;
+  double _rawLow = 0.0;
+  String _description = 'Loading...';
+  String _humidity = '_ _%';
+  String _windSpeed = '_ _ km/h';
+  int _currentWeatherCode = 0;
+
+  List<Map<String, dynamic>> _hourlyForcasts = [];
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -330,6 +351,22 @@ class _weatherScreenState extends State<weatherScreen> {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTabIndex, // Tell it which tab is active
+
+        onTap: (index) {
+          // 2. setState notifies Flutter that a variable changed, trigger a redraw
+          setState(() {
+            _currentTabIndex = index;
+          });
+        },
+
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.blue.shade700, // Blue for active tab (Today)
+        unselectedItemColor: Colors.grey.shade500, // Grey for inactive tabs
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        elevation: 10, // Adds a subtle shadow above the bar
+        type: BottomNavigationBarType.fixed,
         items: [
           const BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today, color: Colors.blue, size: 30),
@@ -344,10 +381,6 @@ class _weatherScreenState extends State<weatherScreen> {
             label: "Settings",
           ),
         ],
-
-        elevation: 0,
-
-        backgroundColor: Colors.white.withOpacity(0.95),
       ),
     );
   }
